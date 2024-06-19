@@ -1,10 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+
 * {
     margin: 0;
     padding: 0;
     outline: none;
     font-family: "Poppins", sans-serif;
 }
+
 :root {
     --primary: #f05525;
     --secondary: #333;
@@ -23,41 +25,50 @@ body {
     overflow-x: hidden;
     background: var(--bgColor);
 }
+
 ::selection {
     color: #fff;
     background: var(--primary);
 }
+
 .container {
     width: 300px;
     height: 600px;
-    background:#fff ;
+    background: #014e00;
     text-align: center;
     border-radius: 10px;
     padding: 50px 35px 10px 35px;
 }
+
 .container header {
     font-size: 35px;
     font-weight: 600;
     margin: 0 0 30px 0;
-    color: #f05525;
+    color: black;
 }
+
 .container .form-outer {
     width: 100%;
     overflow: hidden;
 }
+
 .container .form-outer form {
     display: flex;
     width: calc(100% * var(--stepNumber));
 }
+
 .form-outer form .page {
     width: calc(100% / var(--stepNumber));
     transition: margin-left 0.3s ease-in-out;
 }
+
 .form-outer form .page .title {
     text-align: left;
     font-size: 25px;
     font-weight: 500;
+    color: #66FF66;
 }
+
 .form-outer form .page .field {
     width: 100%;
     height: 45px;
@@ -65,11 +76,13 @@ body {
     display: flex;
     position: relative;
 }
+
 form .page .field .label {
     position: absolute;
     top: -30px;
     font-weight: 500;
 }
+
 form .page .field input {
     box-sizing: border-box;
     height: 100%;
@@ -81,23 +94,26 @@ form .page .field input {
     font-size: 18px;
     transition: border-color 150ms ease;
 }
+
 form .page .field input.invalid-input {
     border-color: var(--errorColor);
 }
+
 form .page .field select {
     width: 100%;
     padding-left: 10px;
     font-size: 17px;
     font-weight: 500;
 }
+
 form .page .field button {
     width: 100%;
     height: calc(100% + 5px);
     border: none;
-    background:#f05525 ;
+    background: black;
     margin-top: -20px;
     border-radius: 5px;
-    color: #fff;
+    color: white;
     cursor: pointer;
     font-size: 18px;
     font-weight: 500;
@@ -105,108 +121,121 @@ form .page .field button {
     text-transform: uppercase;
     transition: 0.5s ease;
 }
+
 form .page .field button:hover {
-    background: #000;
-    
+    background: #66FF66;
 }
+
 form .page .btns button {
     margin-top: -20px !important;
 }
+
 form .page .btns button.prev {
     margin-right: 3px;
     font-size: 17px;
 }
+
 form .page .btns button.next {
     margin-left: 3px;
 }
-.container .progress-bar{
-  display: flex;
-  margin: 40px 0 ;
-  user-select: none;
+
+.container .progress-bar {
+    display: flex;
+    margin: 40px 0;
+    user-select: none;
 }
-.container .progress-bar .step{
-  text-align: center;
-  width: 100%;
-  position: relative;
+
+.container .progress-bar .step {
+    text-align: center;
+    width: 100%;
+    position: relative;
 }
-.container .progress-bar .step p{
-  font-weight: 500;
-  font-size: 15px;
-  color: #000;
-  margin-bottom: 8px;
+
+.container .progress-bar .step p {
+    font-weight: 500;
+    font-size: 15px;
+    color: white;
+    margin-bottom: 8px;
 }
-.progress-bar .step .bullet{
-  height: 25px;
-  width: 25px;
-  border: 2px solid #000;
-  display: inline-block;
-  border-radius: 50%;
-  position: relative;
-  transition: 0.2s;
-  font-weight: 500;
-  font-size: 17px;
-  line-height: 25px;
+
+.progress-bar .step .bullet {
+    height: 25px;
+    width: 25px;
+    border: 2px solid #66FF66;
+    display: inline-block;
+    border-radius: 50%;
+    position: relative;
+    transition: 0.2s;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 25px;
 }
-.progress-bar .step .bullet.active{
-  border-color: #f05525;
-  background: #f05525;
+
+.progress-bar .step .bullet.active {
+    border-color: black;
+    background: black;
 }
-.progress-bar .step .bullet span{
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+
+.progress-bar .step .bullet span {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
-.progress-bar .step .bullet.active span{
-  display: none;
+
+.progress-bar .step .bullet.active span {
+    display: none;
 }
+
 .progress-bar .step .bullet:before,
-.progress-bar .step .bullet:after{
-  position: absolute;
-  content: '';
-  bottom: 11px;
-  right: -50px;
-  height: 3px;
-  width: 49px;
-  background: #262626;
+.progress-bar .step .bullet:after {
+    position: absolute;
+    content: '';
+    bottom: 11px;
+    right: -50px;
+    height: 3px;
+    width: 49px;
+    background: white;
+}
 
-  
+.progress-bar .step .bullet.active:after {
+    background: black;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: animate 0.3s linear forwards;
 }
-.progress-bar .step .bullet.active:after{
-  background: #f05525;
-  transform: scaleX(0);
-  transform-origin: left;
-  animation: animate 0.3s linear forwards;
-}
+
 @keyframes animate {
-  100%{
-    transform: scaleX(1);
-  }
+    100% {
+        transform: scaleX(1);
+    }
 }
+
 .progress-bar .step:last-child .bullet:before,
-.progress-bar .step:last-child .bullet:after{
-  display: none;
-}
-.progress-bar .step p.active{
-  color: #f05525;
-  transition: 0.2s linear;
-}
-.progress-bar .step .check{
-  position: absolute;
-  left: 50%;
-  top: 70%;
-  font-size: 15px;
-  transform: translate(-50%, -50%);
-  display: none;
-}
-.progress-bar .step .check.active{
-  display: block;
-  color: #fff;
+.progress-bar .step:last-child .bullet:after {
+    display: none;
 }
 
-/*hii ya computer size screen*/
+.progress-bar .step p.active {
+    color: black;
+    transition: 0.2s linear;
+}
 
+.progress-bar .step .check {
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    font-size: 15px;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.progress-bar .step .check.active {
+    display: block;
+    color: #fff;
+}
+
+/* Responsive styling for larger screens */
 @media screen and (min-width: 480px) {
-
     .container {
         box-sizing: border-box;
         border-radius: 8px;
@@ -215,25 +244,21 @@ form .page .btns button.next {
     }
 }
 
-
 .custom-file-upload {
     border: 1px solid #ccc;
     display: inline-block;
     cursor: pointer;
-      height: 100%;
-  width: 100%;
-  border: 1px solid lightgrey;
-  border-radius: 5px;
-  padding-left: 15px;
-  font-size: 18px;
+    height: 100%;
+    width: 100%;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    padding-left: 15px;
+    font-size: 18px;
 }
 
 input[type="file"] {
     display: none;
 }
-
-
-
 
 .calendar {
     position: absolute;
@@ -241,12 +266,9 @@ input[type="file"] {
     /* Other styles for the calendar */
 }
 
-
 .custom-file-upload {
     color: #999; /* Placeholder text color */
 }
-
-
 
 .custom-file-upload::before {
     content: attr(placeholder);
@@ -256,11 +278,10 @@ input[type="file"] {
     top: 50%;
     transform: translateY(-50%);
 }
-/* Hide the label when the input field is not empty */
+
 input[type="file"]:not(:placeholder-shown) + .custom-file-upload::before {
     display: none;
 }
-
 
 .custom-file-upload-placeholder {
     position: absolute;
@@ -277,18 +298,13 @@ input[type="file"] {
     opacity: 0;
 }
 
-
-
 .labeljay {
     font-size: 20px;
     margin-bottom: 20px; /* Adjust spacing between label and textarea */
     text-align: left;
-
-  
 }
 
 textarea {
-
     width: 90%;
     height: 150px; /* Adjust height as needed */
     font-size: 16px;
